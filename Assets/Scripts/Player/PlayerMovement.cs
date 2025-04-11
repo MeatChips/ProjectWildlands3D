@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using Unity.Cinemachine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,9 +15,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer; // Layer of ground
     [SerializeField] private Transform groundCheck; // Transform of ground check object
 
-    private void Start()
+    [SerializeField] private CinemachineBrain cmBrain; // Cinemachine camera brain
+    [SerializeField] private CinemachineCamera cmCam; // Cinemachine camera
+
+    private PlayerInput playerInput; // Play input component
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>(); // Get rigidbody component
+
+        playerInput = GetComponent<PlayerInput>(); // Grab playerinput component
+    }
+
+    private void Start()
+    {
+        int playerID = playerInput.playerIndex; // Grab player ID
+        OutputChannels channel = (OutputChannels)((int)OutputChannels.Channel01 << playerID);
+        cmCam.OutputChannel = channel; // Set cinemachine camera output channel to the right channel
+        cmBrain.ChannelMask = channel; // Set cinemachine brain channel mask to the right channel
     }
 
     void Update()
@@ -77,7 +94,12 @@ public class PlayerMovement : MonoBehaviour
     // Boolean to check if the player is grounded
     private bool IsGrounded()
     {
-        // Check if the player is grounded, by using a small sphere at the ground check position
-        return Physics.CheckSphere(groundCheck.position, .1f, groundLayer);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f, groundLayer))
+        {
+            // If the ray hits something within the distance, it's grounded
+            return true;
+        }
+        return false;
     }
 }
