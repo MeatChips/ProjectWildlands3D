@@ -1,75 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &711316839172100747
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7733087082428643216}
-  - component: {fileID: 914127552425020565}
-  - component: {fileID: 7404536451210504704}
-  m_Layer: 0
-  m_Name: PlayerInteraction
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7733087082428643216
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711316839172100747}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8587340991509032314}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &914127552425020565
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711316839172100747}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7404536451210504704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711316839172100747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bc8eb543b578864c927173e6d05b6ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactRange: 2
-  nearbyObject: {fileID: 0}
-  heldObject: {fileID: 0}
-  PickUpPos: {fileID: 992829691308249325}
 --- !u!1 &1686224531823194421
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +351,7 @@ GameObject:
   - component: {fileID: 7511342765819391820}
   - component: {fileID: 8018372034138126548}
   - component: {fileID: 5057991976358721634}
-  - component: {fileID: 3128406372148851876}
+  - component: {fileID: 6853250489898110176}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -550,7 +480,7 @@ MonoBehaviour:
       Wait: 1
       Time: 2
     Restrictions: 0
---- !u!114 &3128406372148851876
+--- !u!114 &6853250489898110176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -578,6 +508,8 @@ GameObject:
   - component: {fileID: 2647521112016884726}
   - component: {fileID: 8834542382753074396}
   - component: {fileID: 1604525663127558155}
+  - component: {fileID: 4611665839435870646}
+  - component: {fileID: 7515069882691550712}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -602,7 +534,6 @@ Transform:
   - {fileID: 6594734807626089371}
   - {fileID: 7208864904327374510}
   - {fileID: 7511342765819391820}
-  - {fileID: 7733087082428643216}
   - {fileID: 992829691308249325}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -783,8 +714,8 @@ MonoBehaviour:
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Nintendo Wireless Gamepad/trigger,/Keyboard/enter]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7404536451210504704}
-        m_TargetAssemblyTypeName: Interacting, Assembly-CSharp
+      - m_Target: {fileID: 4611665839435870646}
+        m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
         m_MethodName: GrabOrDrop
         m_Mode: 1
         m_Arguments:
@@ -876,3 +807,40 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 1301576006903413845}
+--- !u!114 &4611665839435870646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050337041439037796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc8eb543b578864c927173e6d05b6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRange: 2
+  nearbyObject: {fileID: 0}
+  heldObject: {fileID: 0}
+  PickUpPos: {fileID: 992829691308249325}
+--- !u!135 &7515069882691550712
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050337041439037796}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
