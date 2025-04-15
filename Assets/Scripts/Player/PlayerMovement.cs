@@ -6,7 +6,8 @@ using static UnityEditor.PlayerSettings;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 5.0f; // Movement speed of the player
+    [SerializeField] private float walkSpeed = 5.0f; // Walk speed of the player
+    [SerializeField] private float sneakSpeed = 2.5f; // Sneak speed of the player
     [SerializeField] private float rotationSpeed = 100.0f; // Rotation speed of the player
     [SerializeField] private float jumpHeight = 4.0f; // Jump height of the player
 
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CinemachineCamera cmCam; // Cinemachine camera
 
     private PlayerInput playerInput; // Play input component
+    private bool isSneaking = false; // Bool if you are sneaking
 
     private void Awake()
     {
@@ -58,8 +60,11 @@ public class PlayerMovement : MonoBehaviour
             // The player will rotate towards the target at a speed that is determined by the rotationSpeed and time between frames
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
+            // Set currentspeed depending if you are sneaking then use sneakSpeed, otherwise just use walkSpeed.
+            float currentSpeed = isSneaking ? sneakSpeed : walkSpeed;
+
             // Now that the player is facing in the right direciton, move them in that direction.
-            moveDirection = transform.forward * movementSpeed * Time.deltaTime;
+            moveDirection = transform.forward * currentSpeed * Time.deltaTime;
 
             rb.MovePosition(rb.position + moveDirection); // Move the player
         }
@@ -72,6 +77,13 @@ public class PlayerMovement : MonoBehaviour
             input = Vector2.zero; // No movement
         else // There is input
             input += context.ReadValue<Vector2>(); // Add movement
+    }
+
+    // Function for sneak
+    public void Sneak()
+    {
+        // Set true or false
+        isSneaking = !isSneaking;
     }
 
     // Function for player jumping
