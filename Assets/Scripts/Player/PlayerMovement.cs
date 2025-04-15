@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using Unity.Cinemachine;
+using static UnityEditor.PlayerSettings;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb; // Rigidbody
     private Vector2 input; // Store player's input for movement (left, right / forward, backward)
-    [SerializeField] private bool canJump; // Check if you can jump or not
+
     [SerializeField] private LayerMask groundLayer; // Layer of ground
     [SerializeField] private Transform groundCheck; // Transform of ground check object
 
@@ -23,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>(); // Get rigidbody component
-
         playerInput = GetComponent<PlayerInput>(); // Grab playerinput component
     }
 
@@ -63,13 +63,6 @@ public class PlayerMovement : MonoBehaviour
 
             rb.MovePosition(rb.position + moveDirection); // Move the player
         }
-
-        // Check if the player is grounded and if you can jump again
-        if (IsGrounded() && canJump)
-        {
-            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse); // Add force upward so the player jumps
-            canJump = false; // After jumping, set it the boolean to false. It goes back to true once you touch the ground again.
-        }
     }
 
     // Function for player movement
@@ -85,21 +78,13 @@ public class PlayerMovement : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
     {
         // Check if the jump button is pressed and the player is grounded
-        if (context.performed && IsGrounded()) 
-        {
-            canJump = true; // You can jump again
-        }
+        if (context.performed && IsGrounded())
+            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse); // Add force upward so the player jumps
     }
 
     // Boolean to check if the player is grounded
     private bool IsGrounded()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f, groundLayer))
-        {
-            // If the ray hits something within the distance, it's grounded
-            return true;
-        }
-        return false;
+        return Physics.CheckSphere(groundCheck.position, .1f, groundLayer); // Adjust layer mask as needed
     }
 }
