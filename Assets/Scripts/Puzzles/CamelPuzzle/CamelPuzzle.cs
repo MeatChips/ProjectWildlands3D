@@ -8,7 +8,7 @@ public class CamelPuzzle : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PickUp"))
         {
-            camelBump.transform.localScale += new Vector3(0, 0, 50);
+            camelBump.transform.localScale += new Vector3(0, 0, 70);
             Destroy(other.gameObject);
         }
     }
