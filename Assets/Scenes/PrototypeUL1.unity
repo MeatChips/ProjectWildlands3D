@@ -606,6 +606,14 @@ MonoBehaviour:
         m_Groups: 
         m_Action: Join
         m_Flags: 0
+      - m_Name: 
+        m_Id: f5483480-5824-4699-a476-842fe2f408d1
+        m_Path: <DualShockGamepad>/dpad/down
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_PlayerPrefab: {fileID: 6050337041439037796, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
