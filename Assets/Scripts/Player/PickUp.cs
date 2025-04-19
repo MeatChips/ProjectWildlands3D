@@ -1,5 +1,6 @@
 using Unity.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PickUp : MonoBehaviour
 {
@@ -36,16 +37,19 @@ public class PickUp : MonoBehaviour
         }
     }
 
-    public void GrabOrDrop()
+    public void GrabOrDrop(InputAction.CallbackContext context)
     {
-        // If you hold no object and there is a object nearby
-        if (heldObject == null && nearbyObject != null)
+        if(context.performed)
         {
-            GrabObject(); // Grab object
-        }
-        else if (heldObject != null) // If you are holding a object
-        {
-            DropObject(); // Drop object
+            // If you hold no object and there is a object nearby
+            if (heldObject == null && nearbyObject != null)
+            {
+                GrabObject(); // Grab object
+            }
+            else if (heldObject != null) // If you are holding a object
+            {
+                DropObject(); // Drop object
+            }
         }
     }
 
@@ -54,6 +58,7 @@ public class PickUp : MonoBehaviour
     {
         heldObject = nearbyObject; // Set heldObject to the object of nearbyObject
         heldObject.GetComponent<Rigidbody>().isKinematic = true; // Set isKinematic to true
+        heldObject.GetComponent<SphereCollider>().enabled = false;
         heldObject.transform.SetParent(PickUpPos); // Set parent
         heldObject.transform.position = PickUpPos.transform.position; // Set position
     }
@@ -63,7 +68,7 @@ public class PickUp : MonoBehaviour
     {
         heldObject.transform.SetParent(null); // Remove parent
         heldObject.GetComponent<Rigidbody>().isKinematic = false; // Set isKinematic to false
+        heldObject.GetComponent<SphereCollider>().enabled = true; // Set collider bac
         heldObject = null; // No more heldObject
     }
-
 }
