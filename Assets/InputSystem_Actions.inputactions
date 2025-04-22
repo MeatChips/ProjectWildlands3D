@@ -366,7 +366,7 @@
                 {
                     "name": "",
                     "id": "c9794ce2-c9f8-4960-90f6-427df7b65e6a",
-                    "path": "<XInputController>/buttonWest",
+                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -420,19 +420,19 @@
                 },
                 {
                     "name": "",
-                    "id": "b3f66d0b-7751-423f-908b-a11c5bd95930",
-                    "path": "<Gamepad>/buttonNorth",
+                    "id": "94d2bcae-529e-435c-a36a-8b8c126fae4c",
+                    "path": "<DualShockGamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "94d2bcae-529e-435c-a36a-8b8c126fae4c",
-                    "path": "<DualShockGamepad>/dpad/up",
+                    "id": "610c892f-6f04-4bbc-a5e8-2d020d48305f",
+                    "path": "<XInputController>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -1126,7 +1126,8 @@ GameObject:
   m_Component:
   - component: {fileID: 850394476}
   - component: {fileID: 850394478}
-  m_Layer: 6
+  - component: {fileID: 850394479}
+  m_Layer: 0
   m_Name: Spaceship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1170,6 +1171,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.015
   m_Center: {x: -0.0000000010940202, y: -0.000000004256677, z: 0.013940044}
+--- !u!114 &850394479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850394475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e17789f761016f4789e41989af4baac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &910696301 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1160132999297163513, guid: b5135a9933fa4f441af37c2d249e9512, type: 3}
@@ -1861,18 +1874,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 28aabb395b0aa354283d2b571060fd51, type: 3}
   m_PrefabInstance: {fileID: 6491571016030022039}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1823327284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823327277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e17789f761016f4789e41989af4baac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1823327288
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5104,9 +5105,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28aabb395b0aa354283d2b571060fd51, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1823327284}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28aabb395b0aa354283d2b571060fd51, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1823327288}
