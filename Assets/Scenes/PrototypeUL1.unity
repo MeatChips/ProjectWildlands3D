@@ -667,6 +667,9 @@ MonoBehaviour:
     m_Bits: 128
   - serializedVersion: 2
     m_Bits: 256
+  playerColors:
+  - {r: 1, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0.073209524, b: 1, a: 0}
 --- !u!1 &467835842
 GameObject:
   m_ObjectHideFlags: 0

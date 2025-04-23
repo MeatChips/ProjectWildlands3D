@@ -99,12 +99,4 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics.CheckSphere(groundCheck.position, .1f, groundLayer); // Adjust layer mask as needed
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("DeathZone"))
-        {
-            transform.position = GameObject.Find("SpawnPoint1").transform.position;
-        }
-    }
 }
