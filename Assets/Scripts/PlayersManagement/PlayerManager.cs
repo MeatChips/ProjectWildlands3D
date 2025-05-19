@@ -55,6 +55,12 @@ public class PlayerManager : MonoBehaviour
         // Add the layer to the player's culling mask
         playerObj.GetComponentInChildren<Camera>().cullingMask |= 1 << layerToAdd;
 
+        Transform characterVisual = playerObj.Find("Visuals/repobig");
+        if (characterVisual != null)
+        {
+            characterVisual.gameObject.layer = layerToAdd;
+        }
+
         // Set player color (if color list and renderer exist)
         Renderer rend = playerObj.GetComponentInChildren<Renderer>();
         if (rend != null && index < playerColors.Count)
