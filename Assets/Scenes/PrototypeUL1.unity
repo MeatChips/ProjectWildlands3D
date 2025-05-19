@@ -981,9 +981,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3061413531639864968, guid: 9b9df0bf3d5959b43ac43b84ade46eb4, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 994164586}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b9df0bf3d5959b43ac43b84ade46eb4, type: 3}
+--- !u!4 &789779862 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3061413531639864968, guid: 9b9df0bf3d5959b43ac43b84ade46eb4, type: 3}
+  m_PrefabInstance: {fileID: 789779861}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &800115178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c5e2d43a8fb82bd43b9be1ca49275a92, type: 3}
@@ -1226,7 +1234,7 @@ GameObject:
   - component: {fileID: 994164584}
   - component: {fileID: 994164583}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: IconHintCamel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1314,12 +1322,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994164582}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.16543622, y: -0, z: -0, w: 0.98622054}
-  m_LocalPosition: {x: -9.3954, y: 3.63, z: -3.74}
-  m_LocalScale: {x: 2.3090758, y: 1.104, z: 0.26}
+  m_LocalRotation: {x: 0.1321826, y: 0.59305245, z: -0.09948318, w: 0.78798455}
+  m_LocalPosition: {x: 0.31947714, y: 1.2933334, z: -1.6872234}
+  m_LocalScale: {x: 1.5393839, y: 0.73600006, z: 0.17333333}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 789779862}
   m_LocalEulerAnglesHint: {x: 19.045, y: 0, z: 0}
 --- !u!4 &1007135636 stripped
 Transform:
@@ -6364,4 +6372,3 @@ SceneRoots:
   - {fileID: 6352138596414462383}
   - {fileID: 8766001812540948768}
   - {fileID: 349900496}
-  - {fileID: 994164586}
