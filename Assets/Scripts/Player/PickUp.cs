@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PickUp : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem grassparticle;
     [SerializeField] private float interactRange; // Range for player to interact with objects
     [SerializeField] private GameObject nearbyObject; // Nearby object
     [SerializeField] private GameObject heldObject; // Current held object
@@ -26,6 +27,7 @@ public class PickUp : MonoBehaviour
         if (other.CompareTag("PickUp"))
         {
             nearbyObject = other.gameObject;
+            
         }
     }
 
@@ -47,6 +49,7 @@ public class PickUp : MonoBehaviour
             if (heldObject == null && nearbyObject != null)
             {
                 GrabObject(); // Grab object
+                Destroy(grassparticle);
             }
             else if (heldObject != null) // If you are holding a object
             {
