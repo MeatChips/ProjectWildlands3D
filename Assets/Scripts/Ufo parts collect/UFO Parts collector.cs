@@ -15,10 +15,10 @@ public class UFOPartscollector : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("spaceship part"))
         {
-            Destroy(collision.gameObject); // Destroying the parts not the spaceship
+            //Destroy(collision.gameObject); // Destroying the parts not the spaceship
             _collectedParts++;
 
-            Debug.Log("Parts Collected: " + _collectedParts);
+            Debug.Log("Parts Collected:  + _collectedParts");
 
             if (_collectedParts >= _maxParts)
             {
