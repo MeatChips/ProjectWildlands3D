@@ -23,12 +23,12 @@ public class Player : MonoBehaviour
     }
 
     // If player leaves game (THIS IS FOR UI). Then destroy the player
-    public void LeaveGame(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            Debug.Log($"Player {playerInput.playerIndex} is leaving.");
-            Destroy(gameObject); // Destroy player
-        }
-    }
+   // public void LeaveGame(InputAction.CallbackContext context)
+   // {
+   //     if (context.performed)
+   //     {
+   //         Debug.Log($"Player {playerInput.playerIndex} is leaving.");
+   //         Destroy(gameObject); // Destroy player
+   //     }
+   // }
 }
