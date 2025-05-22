@@ -11,17 +11,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed = 100.0f; // Rotation speed of the player
     [SerializeField] private float jumpHeight = 4.0f; // Jump height of the player
 
-    private Rigidbody rb; // Rigidbody
-    private Vector2 input; // Store player's input for movement (left, right / forward, backward)
-
     [SerializeField] private LayerMask groundLayer; // Layer of ground
     [SerializeField] private Transform groundCheck; // Transform of ground check object
 
     [SerializeField] private CinemachineBrain cmBrain; // Cinemachine camera brain
     [SerializeField] private CinemachineCamera cmCam; // Cinemachine camera
 
+    private Rigidbody rb; // Rigidbody
+    private Vector2 input; // Store player's input for movement (left, right / forward, backward)
     private PlayerInput playerInput; // Play input component
     private bool isSneaking = false; // Bool if you are sneaking
+
+    public bool isMoving; // Check if the player is moving
 
     private void Awake()
     {
@@ -67,7 +68,11 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = transform.forward * currentSpeed * Time.deltaTime;
 
             rb.MovePosition(rb.position + moveDirection); // Move the player
+
+            isMoving = true; // The player is moving
         }
+        else
+            isMoving = false; // The player is not moving
     }
 
     // Function for player movement
@@ -95,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Boolean to check if the player is grounded
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics.CheckSphere(groundCheck.position, .1f, groundLayer); // Adjust layer mask as needed
     }

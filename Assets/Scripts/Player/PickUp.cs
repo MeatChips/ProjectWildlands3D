@@ -8,12 +8,14 @@ public class PickUp : MonoBehaviour
     [SerializeField] private GameObject nearbyObject; // Nearby object
     [SerializeField] private GameObject heldObject; // Current held object
     [SerializeField] private Transform PickUpPos; // Position for pick up
-    
+    [SerializeField] private float throwPower = 6f;
+    private PlayerMovement playerMovement; // Player movement component
     private SphereCollider sphereCol; // Sphere collider / interact range
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerMovement = GetComponent<PlayerMovement>(); // Grab player movement componenet
         sphereCol = GetComponent<SphereCollider>(); // Grab sphere collider
         sphereCol.radius = interactRange; // Set sphere collider radius
     }
@@ -68,7 +70,15 @@ public class PickUp : MonoBehaviour
     {
         heldObject.transform.SetParent(null); // Remove parent
         heldObject.GetComponent<Rigidbody>().isKinematic = false; // Set isKinematic to false
-        heldObject.GetComponent<SphereCollider>().enabled = true; // Set collider bac
+        heldObject.GetComponent<SphereCollider>().enabled = true; // Set collider back
+        if (!playerMovement.IsGrounded()) // If the player is not grounded
+        {
+            heldObject.GetComponent<Rigidbody>().AddForce(Vector3.up * throwPower, ForceMode.Impulse); // Add force up
+            if (playerMovement.isMoving) // If the player is moving
+                heldObject.GetComponent<Rigidbody>().AddForce(transform.forward * throwPower, ForceMode.Impulse); // Add force up
+        }
         heldObject = null; // No more heldObject
+
+
     }
 }
