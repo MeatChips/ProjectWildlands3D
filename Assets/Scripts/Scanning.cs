@@ -27,7 +27,7 @@ public class Scanning : MonoBehaviour
         }
         
       //if the camel power has been unlocked and R is pressed, select the camelpower. causing the rock to be able to be moved
-        if (CamelPowerUnlocked == true && Input.GetKeyDown(KeyCode.R))
+        if (CamelPowerUnlocked && Input.GetKeyDown(KeyCode.R))
 
         {
            

@@ -2110,6 +2110,67 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: c5e2d43a8fb82bd43b9be1ca49275a92, type: 3}
+--- !u!1001 &1953632524
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6050337041439037796, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
+      propertyPath: m_Name
+      value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799764247067941018, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
+      propertyPath: CamelPowerSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2070978525}
+    - target: {fileID: 8587340991509032314, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.304516
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587340991509032314, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587340991509032314, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.950512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587340991509032314, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587340991509032314, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587340991509032314, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587340991509032314, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587340991509032314, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587340991509032314, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587340991509032314, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c30cd7a1a2ee73942a7071402f702416, type: 3}
 --- !u!1 &2033351211 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5817164777336937037, guid: b5135a9933fa4f441af37c2d249e9512, type: 3}
@@ -2137,6 +2198,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -710535286971543980, guid: b5135a9933fa4f441af37c2d249e9512, type: 3}
+--- !u!114 &2070978525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8211080909054402370, guid: af66b542a7eb32446910fe3b7ba32e85, type: 3}
+  m_PrefabInstance: {fileID: 68253442388456115}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1a645f34678b14eaff86eab123c321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2094072039 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c5e2d43a8fb82bd43b9be1ca49275a92, type: 3}
@@ -2226,6 +2298,10 @@ PrefabInstance:
     - target: {fileID: 1973936416776244581, guid: af66b542a7eb32446910fe3b7ba32e85, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973936416776244581, guid: af66b542a7eb32446910fe3b7ba32e85, type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2656625575976647970, guid: af66b542a7eb32446910fe3b7ba32e85, type: 3}
       propertyPath: m_Name
@@ -6445,3 +6521,4 @@ SceneRoots:
   - {fileID: 349900496}
   - {fileID: 8210851676225833890}
   - {fileID: 68253442388456115}
+  - {fileID: 1953632524}
