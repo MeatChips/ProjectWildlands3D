@@ -963,9 +963,9 @@ MonoBehaviour:
   CamelPowerSelected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8211080909054402370, guid: af66b542a7eb32446910fe3b7ba32e85, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MakeRockMove, Assembly-CSharp
-        m_MethodName: CamelPowerUse
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -978,6 +978,7 @@ MonoBehaviour:
   ScanRange: 5
   Object1: {fileID: 6050337041439037796}
   Object2: {fileID: 8216510500410414931, guid: 6a07fa87f7a955d49937ed2a484a4384, type: 3}
+  rockScript: {fileID: 0}
 --- !u!1001 &6240497220042318078
 PrefabInstance:
   m_ObjectHideFlags: 0

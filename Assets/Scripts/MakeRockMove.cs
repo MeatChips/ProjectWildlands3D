@@ -14,30 +14,10 @@ public class MakeRockMove : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
     }
-
-    //private void Update()
-    //{//if the power is active (aka the previous event has been completed make the rock movable (by setting kinematic to false)
-    //    if (PowerActive)
-    //    {
-    //        rb.WakeUp();
-    //        rb.isKinematic = false;
-           
-    //    }
-    //}
     public void CamelPowerUse()
     {
         //when the event is recieved set power active to true
         PowerActive = true;
-        rb.isKinematic = false;
-
-        Debug.Log("Used");
+        rb.isKinematic = false; // this makes the rock moveable/effected by gravity
     }
-    
-    //public void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.G))
-     //   {
-    //        rb.isKinematic = true ;
-     //   }
-    //}
 }
