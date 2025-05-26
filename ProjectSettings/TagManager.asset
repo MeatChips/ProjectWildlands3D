@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PickUp
   - DeathZone
+  - spaceship part
   layers:
   - Default
   - TransparentFX
