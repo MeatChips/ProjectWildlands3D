@@ -10,14 +10,13 @@ public class MakeRockMove : MonoBehaviour
     public Rigidbody rb;
     private void Start()
     {
-        //get the rigid body and make sure every setting is set to default
+        // get the rigid body and make sure every setting is set to default
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
     }
     public void CamelPowerUse()
     {
-        //when the event is recieved set power active to true
-        PowerActive = true;
+        PowerActive = true; // when the function is called set power active to true
         rb.isKinematic = false; // this makes the rock moveable/effected by gravity
     }
 }
