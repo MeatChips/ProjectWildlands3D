@@ -31,7 +31,7 @@ void Update()
         if (Vector3.Distance(Object1.transform.position, Object2.transform.position) < ScanRange && Input.GetKeyDown(KeyCode.L))
         {
             CamelPowerUnlocked= true;
-            //Debug.Log("camel unlocked");
+            Debug.Log("camel unlocked");
         }
         
       // if the camel power has been unlocked and R is pressed, select the camelpower. causing the rock to be able to be moved

@@ -977,7 +977,7 @@ MonoBehaviour:
         m_CallState: 2
   ScanRange: 5
   Object1: {fileID: 6050337041439037796}
-  Object2: {fileID: 8216510500410414931, guid: 6a07fa87f7a955d49937ed2a484a4384, type: 3}
+  Object2: {fileID: 9037903272788331388, guid: ddc808c2a31969c48828379ec75e6f2b, type: 3}
   rockScript: {fileID: 0}
 --- !u!1001 &6240497220042318078
 PrefabInstance:
