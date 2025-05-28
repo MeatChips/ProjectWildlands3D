@@ -515,17 +515,6 @@
                 },
                 {
                     "name": "",
-                    "id": "69c5a5ed-e825-457a-b84e-69e054c061ef",
-                    "path": "<XInputController>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "enable power",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "bcfc8f51-9354-4a13-9ae7-a2f040ea5256",
                     "path": "<XInputController>/leftShoulder",
                     "interactions": "",
