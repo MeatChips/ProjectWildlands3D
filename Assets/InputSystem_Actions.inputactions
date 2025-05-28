@@ -523,6 +523,17 @@
                     "action": "enable power",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68b9f43c-3c4f-4349-9537-6cdd52921f28",
+                    "path": "<DualShockGamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "enable power",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
