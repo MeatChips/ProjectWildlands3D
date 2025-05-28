@@ -17,6 +17,8 @@ TagManager:
   - Ground
   - Player1
   - Player2
+  - 'ScanCollision '
+  - 
   - GroundHead
   - PickUp
   - 

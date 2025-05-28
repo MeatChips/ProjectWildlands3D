@@ -17,6 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Savanna Level.unity
     guid: 9171477e159004444bcf92f0c1a1b1b5
+    path: Assets/Scenes/PrototypeUL1.unity
+    guid: be0f4ecb44c3b6e4cadedd277183e5a1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

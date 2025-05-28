@@ -629,6 +629,7 @@ GameObject:
   - component: {fileID: 4611665839435870646}
   - component: {fileID: 7515069882691550712}
   - component: {fileID: 3532864936322757391}
+  - component: {fileID: 7799764247067941018}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -945,6 +946,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd80cb377e6a7749a91c53d208776f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7799764247067941018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050337041439037796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd3008b6bce8914fa4e423a9416344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CamelPowerUnlocked: 0
+  CamelPowerSelectFake: 0
+  CamelPowerSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MakeRockMove, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ScanRange: 5
+  Object1: {fileID: 6050337041439037796}
+  Object2: {fileID: 8216510500410414931, guid: 6a07fa87f7a955d49937ed2a484a4384, type: 3}
+  rockScript: {fileID: 0}
 --- !u!1001 &6240497220042318078
 PrefabInstance:
   m_ObjectHideFlags: 0
