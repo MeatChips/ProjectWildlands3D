@@ -19,7 +19,7 @@ public class MainMenuUI : MonoBehaviour
         startButton.clicked += () =>
         {
 
-            SceneManager.LoadScene("Savanna Level");
+            SceneManager.LoadScene("NEW TERRAIN");
         };
     }
 }
