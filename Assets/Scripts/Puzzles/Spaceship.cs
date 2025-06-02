@@ -14,6 +14,7 @@ public class Spaceship : MonoBehaviour
 
     void SpawnRat()//to indicate the rats spawn point
     {
+        Debug.Log("Spawning rat at: " + ratSpawnPoint.position);
         Instantiate(Rat, ratSpawnPoint.position, ratSpawnPoint.rotation);
     }
 
@@ -29,6 +30,7 @@ public class Spaceship : MonoBehaviour
             //spawning the rat after 2 spaceship parts are collected
             if (_collectedParts == 2 && !_ratSpawned)
             {
+
                 SpawnRat();
                 _ratSpawned = true;
                 Debug.Log("Find Larry the rat");
@@ -38,7 +40,7 @@ public class Spaceship : MonoBehaviour
             if (_collectedParts == _maxParts)
             {
                 //switching to credit scene
-                SceneManager.LoadScene("Credit Scene");
+                SceneManager.LoadScene("Credits");
             }
         }
     }

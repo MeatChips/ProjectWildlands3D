@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: ce886f6464844644fa29b54866df7221
+  - enabled: 1
+    path: Assets/Scenes/NEW TERRAIN.unity
+    guid: 9c589da011f1aae479a08517512206a5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
