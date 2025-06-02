@@ -14,6 +14,8 @@ public class AudioManager : MonoBehaviour
     private AudioSource audioSource;
     private float MasterVolume;
 
+    private PauseSystem pauseSystem;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -69,11 +71,12 @@ public class AudioManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
     {
         // Add all 
-        if (scene.name == "Settings")
+        if (scene.name == "NEW TERRAIN")
         {
-            masterSlider = GameObject.Find("MasterAudioSlider").GetComponent<Slider>();
+            pauseSystem = GameObject.Find("Canvas").GetComponent<PauseSystem>();
+            masterSlider = pauseSystem.audioSlider;
 
-            GameObject.Find("MasterAudioSlider").GetComponent<Slider>().onValueChanged.AddListener(delegate { OnMasterValueChanged(); });
+            masterSlider.onValueChanged.AddListener(delegate { OnMasterValueChanged(); });
 
             masterSlider.value = PlayerPrefs.GetFloat("mastervolume");
         }
