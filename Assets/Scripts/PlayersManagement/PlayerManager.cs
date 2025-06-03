@@ -69,6 +69,7 @@ public class PlayerManager : MonoBehaviour
         //    rend.material.color = playerColors[index];
         //}
 
+        PickUp pickUp = playerObj.GetComponent<PickUp>();
         Transform visualParent = playerObj.Find("Visuals"); // Find parent object
         if (visualParent != null) // Check if parent object is not null
         {
@@ -84,6 +85,11 @@ public class PlayerManager : MonoBehaviour
                     foreach (Transform t in child.GetComponentsInChildren<Transform>())
                     {
                         t.gameObject.layer = layerToAdd;
+                    }
+
+                    if(pickUp != null)
+                    {
+                        pickUp.isBigPlayer = child.name == "functioning alien";
                     }
                 }
             }

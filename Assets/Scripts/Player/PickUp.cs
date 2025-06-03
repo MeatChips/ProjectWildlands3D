@@ -7,10 +7,12 @@ public class PickUp : MonoBehaviour
     [SerializeField] private float interactRange; // Range for player to interact with objects
     [SerializeField] private GameObject nearbyObject; // Nearby object
     [SerializeField] private GameObject heldObject; // Current held object
-    [SerializeField] private Transform PickUpPos; // Position for pick up
+    [SerializeField] private Transform smallPlayerPickUpPos; // Position for pick up
+    [SerializeField] private Transform bigPlayerPickUpPos; // Position for pick up
     [SerializeField] private float throwPower = 6f;
     private PlayerMovement playerMovement; // Player movement component
     private SphereCollider sphereCol; // Sphere collider / interact range
+    [HideInInspector] public bool isBigPlayer = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -58,11 +60,12 @@ public class PickUp : MonoBehaviour
     // Grab object
     private void GrabObject()
     {
-        heldObject = nearbyObject; // Set heldObject to the object of nearbyObject
-        heldObject.GetComponent<Rigidbody>().isKinematic = true; // Set isKinematic to true
+        heldObject = nearbyObject;
+        heldObject.GetComponent<Rigidbody>().isKinematic = true;
         heldObject.GetComponent<SphereCollider>().enabled = false;
-        heldObject.transform.SetParent(PickUpPos); // Set parent
-        heldObject.transform.position = PickUpPos.transform.position; // Set position
+        Transform chosenPickUpPos = isBigPlayer ? bigPlayerPickUpPos : smallPlayerPickUpPos;
+        heldObject.transform.SetParent(chosenPickUpPos);
+        heldObject.transform.position = chosenPickUpPos.position;
     }
 
     // Drop object
