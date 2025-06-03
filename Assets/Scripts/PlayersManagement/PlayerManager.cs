@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private List<Transform> startingPoints; // List of Spawn points
     [SerializeField] private List<LayerMask> playerLayers; // List of Layermasks for different players
     //[SerializeField] private List<Color> playerColors; // List of of player colors
-    [SerializeField] private List<GameObject> playerModels; // List of of player visuals
+    //[SerializeField] private List<GameObject> playerModels; // List of of player visuals
 
     private PlayerInputManager playerInputManager;
 
@@ -89,7 +89,7 @@ public class PlayerManager : MonoBehaviour
 
                     if(pickUp != null)
                     {
-                        pickUp.isBigPlayer = child.name == "functioning alien";
+                        pickUp.isBigPlayer = child.name == "BigAlien";
                     }
                 }
             }
