@@ -957,6 +957,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c51f5014-74ad-4ede-8876-a3a86501d56c
     m_ActionName: 'Player/enable power[/XInputControllerWindows1/leftShoulder,/XInputControllerWindows/leftShoulder]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4056917227742931036}
+        m_TargetAssemblyTypeName: Pausing, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7961a0fa-b229-4e73-9048-497e4a7ada39
+    m_ActionName: 'Player/PauseGame[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1059,6 +1075,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0969c26f15830744b4a890da93ce945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseCanvas: {fileID: 0}
+  pauseSystem: {fileID: 0}
 --- !u!1001 &4453746451318357275
 PrefabInstance:
   m_ObjectHideFlags: 0

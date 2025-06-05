@@ -550,7 +550,7 @@
                     "path": "<Gamepad>/select",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad;Keyboard&Mouse",
                     "action": "PauseGame",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -561,7 +561,7 @@
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad;Keyboard&Mouse",
                     "action": "PauseGame",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -572,7 +572,7 @@
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad;Keyboard&Mouse",
                     "action": "PauseGame",
                     "isComposite": false,
                     "isPartOfComposite": false
