@@ -774,6 +774,7 @@ GameObject:
   - component: {fileID: 7515069882691550712}
   - component: {fileID: 3532864936322757391}
   - component: {fileID: 7799764247067941018}
+  - component: {fileID: -4056917227742931036}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -1045,6 +1046,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c51f5014-74ad-4ede-8876-a3a86501d56c
     m_ActionName: 'Player/enable power[/XInputControllerWindows1/leftShoulder,/XInputControllerWindows/leftShoulder]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4056917227742931036}
+        m_TargetAssemblyTypeName: Pausing, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7961a0fa-b229-4e73-9048-497e4a7ada39
+    m_ActionName: 'Player/PauseGame[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
