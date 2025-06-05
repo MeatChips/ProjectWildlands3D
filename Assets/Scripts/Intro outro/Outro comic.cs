@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class Outrocomic : MonoBehaviour
 {
-    public void LoadNewScene(string Credits)
+    public void OnOutroComplete()
     {
-        SceneManager.LoadScene(Credits);
+        SceneManager.LoadScene("Credits"); // after outro go to the credits
     }
 }

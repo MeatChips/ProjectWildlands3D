@@ -212,7 +212,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 11.033334
-    functionName: 
+    functionName: OnOutroComplete()
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
