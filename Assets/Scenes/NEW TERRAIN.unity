@@ -3004,7 +3004,7 @@ GameObject:
   - component: {fileID: 283658158}
   - component: {fileID: 283658157}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: uiCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13744,19 +13744,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2393526654556668978, guid: 9b9df0bf3d5959b43ac43b84ade46eb4, type: 3}
   m_PrefabInstance: {fileID: 1825126811}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1237620825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237620824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8f4de539f575624981f28a21cbc41d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiCanvas: {fileID: 0}
 --- !u!114 &1237620831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20033,9 +20020,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2393526654556668978, guid: 9b9df0bf3d5959b43ac43b84ade46eb4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1237620825}
     - targetCorrespondingSourceObject: {fileID: 2393526654556668978, guid: 9b9df0bf3d5959b43ac43b84ade46eb4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1237620832}
