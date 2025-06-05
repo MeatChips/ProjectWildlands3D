@@ -661,6 +661,7 @@ GameObject:
   - component: {fileID: 7515069882691550712}
   - component: {fileID: 3532864936322757391}
   - component: {fileID: 7799764247067941018}
+  - component: {fileID: -4056917227742931036}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -956,6 +957,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c51f5014-74ad-4ede-8876-a3a86501d56c
     m_ActionName: 'Player/enable power[/XInputControllerWindows1/leftShoulder,/XInputControllerWindows/leftShoulder]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4056917227742931036}
+        m_TargetAssemblyTypeName: Pausing, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7961a0fa-b229-4e73-9048-497e4a7ada39
+    m_ActionName: 'Player/PauseGame[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1046,6 +1063,20 @@ MonoBehaviour:
   Object1: {fileID: 6050337041439037796}
   Object2: {fileID: 9037903272788331388, guid: ddc808c2a31969c48828379ec75e6f2b, type: 3}
   rockScript: {fileID: 0}
+--- !u!114 &-4056917227742931036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050337041439037796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0969c26f15830744b4a890da93ce945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseCanvas: {fileID: 0}
+  pauseSystem: {fileID: 0}
 --- !u!1001 &4453746451318357275
 PrefabInstance:
   m_ObjectHideFlags: 0
