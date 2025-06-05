@@ -12,7 +12,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private List<PlayerInput> players = new List<PlayerInput>(); // List of Players
     [SerializeField] private List<Transform> startingPoints; // List of Spawn points
     [SerializeField] private List<LayerMask> playerLayers; // List of Layermasks for different players
-    [SerializeField] private List<Color> playerColors; // List of of player colors
+    //[SerializeField] private List<Color> playerColors; // List of of player colors
+    [SerializeField] private List<GameObject> playerModels; // List of of player visuals
 
     private PlayerInputManager playerInputManager;
 
@@ -55,17 +56,43 @@ public class PlayerManager : MonoBehaviour
         // Add the layer to the player's culling mask
         playerObj.GetComponentInChildren<Camera>().cullingMask |= 1 << layerToAdd;
 
-        Transform characterVisual = playerObj.Find("Visuals/repobig");
-        if (characterVisual != null)
-        {
-            characterVisual.gameObject.layer = layerToAdd;
-        }
+        //Transform characterVisual = playerObj.Find("Visuals/repobig");
+        //if (characterVisual != null)
+        //{
+        //    characterVisual.gameObject.layer = layerToAdd;
+        //}
+        //
+        //// Set player color (if color list and renderer exist)
+        //Renderer rend = playerObj.GetComponentInChildren<Renderer>();
+        //if (rend != null && index < playerColors.Count)
+        //{
+        //    rend.material.color = playerColors[index];
+        //}
 
-        // Set player color (if color list and renderer exist)
-        Renderer rend = playerObj.GetComponentInChildren<Renderer>();
-        if (rend != null && index < playerColors.Count)
+        PickUp pickUp = playerObj.GetComponent<PickUp>();
+        Transform visualParent = playerObj.Find("Visuals"); // Find parent object
+        if (visualParent != null) // Check if parent object is not null
         {
-            rend.material.color = playerColors[index];
+            for (int i = 0; i < visualParent.childCount; i++) // Loop through the children of the parent object
+            {
+                Transform child = visualParent.GetChild(i);
+                // Enable only the model that matches the player index
+                child.gameObject.SetActive(i == index);
+
+                // Apply the layer
+                if (i == index)
+                {
+                    foreach (Transform t in child.GetComponentsInChildren<Transform>())
+                    {
+                        t.gameObject.layer = layerToAdd;
+                    }
+
+                    if(pickUp != null)
+                    {
+                        pickUp.isBigPlayer = child.name == "functioning alien";
+                    }
+                }
+            }
         }
     }
 }

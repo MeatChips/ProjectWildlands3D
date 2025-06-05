@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseSystem : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu = null;
+    public Slider audioSlider;
 
     bool isPaused;
 
