@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NEW TERRAIN.unity
     guid: 9c589da011f1aae479a08517512206a5
+  - enabled: 1
+    path: Assets/Scenes/Comic Outro.unity
+    guid: 4f8e9d27787986148806da058b7e6e61
+  - enabled: 1
+    path: Assets/Scenes/Comic Intro.unity
+    guid: ac0ac80d744153a408a2d617516a936b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -17633,6 +17633,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4711208715938537054, guid: 28aabb395b0aa354283d2b571060fd51, type: 3}
+--- !u!114 &1602651922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602651914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e17789f761016f4789e41989af4baac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rat: {fileID: 487944342520112258, guid: 4bb417e6c62543f41974b546bba5bb98, type: 3}
+  ratSpawnPoint: {fileID: 1731245233554842269, guid: 4bb417e6c62543f41974b546bba5bb98, type: 3}
 --- !u!1 &1604429543
 GameObject:
   m_ObjectHideFlags: 0
@@ -19142,6 +19156,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28aabb395b0aa354283d2b571060fd51, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1602651918}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28aabb395b0aa354283d2b571060fd51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1602651922}
   m_SourcePrefab: {fileID: 100100000, guid: 28aabb395b0aa354283d2b571060fd51, type: 3}
 --- !u!1 &1778607561
 GameObject:

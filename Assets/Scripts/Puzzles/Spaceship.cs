@@ -40,7 +40,7 @@ public class Spaceship : MonoBehaviour
             if (_collectedParts == _maxParts)
             {
                 //switching to credit scene
-                SceneManager.LoadScene("Credits");
+                SceneManager.LoadScene("Comic Outro");
             }
         }
     }
