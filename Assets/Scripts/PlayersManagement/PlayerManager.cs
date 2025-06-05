@@ -1,9 +1,5 @@
-using NUnit.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,8 +8,6 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private List<PlayerInput> players = new List<PlayerInput>(); // List of Players
     [SerializeField] private List<Transform> startingPoints; // List of Spawn points
     [SerializeField] private List<LayerMask> playerLayers; // List of Layermasks for different players
-    //[SerializeField] private List<Color> playerColors; // List of of player colors
-    [SerializeField] private List<GameObject> playerModels; // List of of player visuals
 
     private PlayerInputManager playerInputManager;
 
@@ -46,22 +40,16 @@ public class PlayerManager : MonoBehaviour
         // Spawn player at spawnpoint
         Transform playerObj = player.transform;
         playerObj.position = startingPoints[players.Count - 1].position;
-    
+
         // Convert layer mask (bit) to an integer representing the layer
         int layerToAdd = (int)Mathf.Log(playerLayers[players.Count - 1].value, 2);
-    
+
         // Set the layer of the player's camera
         playerObj.GetComponentInChildren<CinemachineCamera>().gameObject.layer = layerToAdd;
 
         // Add the layer to the player's culling mask
         playerObj.GetComponentInChildren<Camera>().cullingMask |= 1 << layerToAdd;
 
-        //Transform characterVisual = playerObj.Find("Visuals/repobig");
-        //if (characterVisual != null)
-        //{
-        //    characterVisual.gameObject.layer = layerToAdd;
-        //}
-        //
         //// Set player color (if color list and renderer exist)
         //Renderer rend = playerObj.GetComponentInChildren<Renderer>();
         //if (rend != null && index < playerColors.Count)
@@ -87,9 +75,9 @@ public class PlayerManager : MonoBehaviour
                         t.gameObject.layer = layerToAdd;
                     }
 
-                    if(pickUp != null)
+                    if (pickUp != null)
                     {
-                        pickUp.isBigPlayer = child.name == "functioning alien";
+                        pickUp.isBigPlayer = child.name == "BigAlien";
                     }
                 }
             }
