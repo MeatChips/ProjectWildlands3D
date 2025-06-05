@@ -8,13 +8,10 @@ public class PauseSystem : MonoBehaviour
 
     bool isPaused;
 
-    void Update()
+    public void PauseToggle()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
             isPaused = !isPaused;
             Time.timeScale = isPaused ? 0 : 1;
             pauseMenu.SetActive(isPaused);
-        }
     }
 }
