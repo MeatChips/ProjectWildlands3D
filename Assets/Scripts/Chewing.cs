@@ -16,7 +16,7 @@ public class Chewing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(Object1.transform.position, leWall.transform.position) < ChewRange && Input.GetKeyDown(KeyCode.R))
+        if (leWall != null && Vector3.Distance(Object1.transform.position, leWall.transform.position) < ChewRange && Input.GetKeyDown(KeyCode.R))
         {
             Destroy(leWall);
             Debug.Log("destroyed");
