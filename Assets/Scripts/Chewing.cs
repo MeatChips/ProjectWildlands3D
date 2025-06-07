@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class Chewing : MonoBehaviour
@@ -14,9 +15,9 @@ public class Chewing : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Chew(InputAction.CallbackContext context)
     {
-        if (leWall != null && Vector3.Distance(Object1.transform.position, leWall.transform.position) < ChewRange && Input.GetKeyDown(KeyCode.R))
+        if (leWall != null && Vector3.Distance(Object1.transform.position, leWall.transform.position) < ChewRange && context.performed)
         {
             Destroy(leWall);
             Debug.Log("destroyed");

@@ -112,6 +112,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Chewing power",
+                    "type": "Button",
+                    "id": "376abcb0-f69d-4853-90c8-9266e0a8e639",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -574,6 +583,28 @@
                     "processors": "",
                     "groups": ";Gamepad;Keyboard&Mouse",
                     "action": "PauseGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e2d28ace-ad65-40af-a385-f0bb56898002",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Chewing power",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "422df800-1bd5-48b6-ab68-37772bc7fd11",
+                    "path": "<Keyboard>/#(R)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Chewing power",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

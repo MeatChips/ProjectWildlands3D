@@ -948,6 +948,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7961a0fa-b229-4e73-9048-497e4a7ada39
     m_ActionName: 'Player/PauseGame[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4488654940695307038}
+        m_TargetAssemblyTypeName: Chewing, Assembly-CSharp
+        m_MethodName: Chew
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 376abcb0-f69d-4853-90c8-9266e0a8e639
+    m_ActionName: 'Player/Chewing power[/XInputControllerWindows/rightShoulder]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
