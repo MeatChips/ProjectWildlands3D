@@ -43,7 +43,10 @@ public class PickUp : MonoBehaviour
 
     public void GrabOrDrop(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (PauseSystem.Instance.isPaused)
+            return;
+
+        if (context.performed)
         {
             // If you hold no object and there is a object nearby
             if (heldObject == null && nearbyObject != null)
