@@ -94,6 +94,9 @@ public class PlayerMovement : MonoBehaviour
     // Function for player jumping
     public void Jump(InputAction.CallbackContext context)
     {
+        if (Time.timeScale == 0)
+            return;
+
         // Check if the jump button is pressed and the player is grounded
         if (context.performed && IsGrounded())
             rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse); // Add force upward so the player jumps
