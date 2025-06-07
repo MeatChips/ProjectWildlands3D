@@ -19,7 +19,7 @@ public class MainMenuUI : MonoBehaviour
         startButton.clicked += () =>
         {
 
-            SceneManager.LoadScene("NEW TERRAIN");
+            SceneManager.LoadScene("Intro Comic 1");
         };
     }
 }
