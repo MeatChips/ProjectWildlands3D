@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 using Unity.Cinemachine;
-using static UnityEditor.PlayerSettings;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -87,6 +85,9 @@ public class PlayerMovement : MonoBehaviour
     // Function for sneak
     public void Sneak()
     {
+        if (PauseSystem.Instance.isPaused)
+            return;
+
         // Set true or false
         isSneaking = !isSneaking;
     }
@@ -94,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
     // Function for player jumping
     public void Jump(InputAction.CallbackContext context)
     {
-        if (Time.timeScale == 0)
+        if (PauseSystem.Instance.isPaused)
             return;
 
         // Check if the jump button is pressed and the player is grounded
