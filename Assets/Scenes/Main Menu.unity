@@ -532,6 +532,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterMixerGroup: {fileID: 24300002, guid: 39dac4f4736d20e43b4677345f7447cf, type: 2}
+  introAudio: {fileID: 8300000, guid: d6fe29b81af801e4fa4bedf075ee0354, type: 3}
+  gameAudio: {fileID: 8300000, guid: 46035a8fd4a463f46bd76471c4bca482, type: 3}
 --- !u!4 &1922959034
 Transform:
   m_ObjectHideFlags: 0
