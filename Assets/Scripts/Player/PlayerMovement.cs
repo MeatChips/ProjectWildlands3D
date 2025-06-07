@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         cmBrain.ChannelMask = channel; // Set cinemachine brain channel mask to the right channel
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Changes the length of the vector to 1, so the same movement speed is same in every direction
         input.Normalize();
@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         if (context.canceled) // Check if there is no input
             input = Vector2.zero; // No movement
         else // There is input
-            input += context.ReadValue<Vector2>(); // Add movement
+            input = context.ReadValue<Vector2>(); // Add movement
     }
 
     // Function for sneak
