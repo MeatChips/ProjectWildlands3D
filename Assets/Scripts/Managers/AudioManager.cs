@@ -10,6 +10,9 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     [SerializeField] private AudioMixerGroup masterMixerGroup;
 
+    [SerializeField] private AudioClip introAudio;
+    [SerializeField] private AudioClip gameAudio;
+
     private Slider masterSlider;
     private AudioSource audioSource;
     private float MasterVolume;
@@ -79,8 +82,21 @@ public class AudioManager : MonoBehaviour
             masterSlider.onValueChanged.AddListener(delegate { OnMasterValueChanged(); });
 
             masterSlider.value = PlayerPrefs.GetFloat("mastervolume");
-        }
 
+            if (audioSource.clip != gameAudio)
+            {
+                audioSource.clip = gameAudio;
+                audioSource.Play();
+            }
+        }
+        else if (scene.name == "MainMenu")
+        {
+            if (audioSource.clip != introAudio)
+            {
+                audioSource.clip = introAudio;
+                audioSource.Play();
+            }
+        }
     }
 
      private void OnDisable()
