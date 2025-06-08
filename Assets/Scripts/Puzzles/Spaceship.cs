@@ -6,7 +6,8 @@ public class Spaceship : MonoBehaviour
 
     public GameObject Rat;
     public Transform ratSpawnPoint;
-
+    [SerializeField] private ParticleSystem confetti;
+    
     //spaceship parts related
     private int _maxParts = 3;
     private int _collectedParts = 0;
@@ -49,10 +50,13 @@ public class Spaceship : MonoBehaviour
     {
         if (collision.gameObject.name.Contains("PickUpSpaceShip"))
         {
+
             Destroy(collision.gameObject); //destroying the spaceship part
             _collectedParts++; //adding plus one on the collected parts
 
             Debug.Log("Part successfully collected" + _collectedParts);
+
+            confetti.Play();
 
             //spawning the rat after 2 spaceship parts are collected
             if (_collectedParts == 2 && !_ratSpawned)
