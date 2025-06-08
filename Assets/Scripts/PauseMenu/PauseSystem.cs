@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PauseSystem : MonoBehaviour
 {
     public static PauseSystem Instance { get; private set; }
-
+    [SerializeField] private GameObject arrowIcon;
     [SerializeField] private GameObject pauseMenu = null;
     public Slider audioSlider;
     public bool isPaused;
@@ -26,6 +26,10 @@ public class PauseSystem : MonoBehaviour
     {
         if (context.performed) // Check if the action was performed
         {
+            IconChange arrowIcon = FindFirstObjectByType<IconChange>();
+            if (arrowIcon != null) {
+                arrowIcon.Deactivate();
+            }
             Debug.Log("Pause button pressed"); // Log to console for debugging
             isPaused = !isPaused;
             Time.timeScale = isPaused ? 0 : 1;

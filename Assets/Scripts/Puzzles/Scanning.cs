@@ -32,6 +32,7 @@ public class Scanning : MonoBehaviour
         // if the distance between the player and the scancube is less than scanrange and L is pressed unlock camel power
         if (Vector3.Distance(Object1.transform.position, Object2.transform.position) < ScanRange && context.performed)
         {
+            CamelPowerSelected.Invoke();
             CamelPowerUnlocked = true;
             Debug.Log("camel unlocked");
         }
