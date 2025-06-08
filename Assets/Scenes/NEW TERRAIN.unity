@@ -38262,7 +38262,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3170707409783823108, guid: cba51b43a069c4b47983ccb023aee06d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.53
+      value: 26.49
       objectReference: {fileID: 0}
     - target: {fileID: 3170707409783823108, guid: cba51b43a069c4b47983ccb023aee06d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -38270,7 +38270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3170707409783823108, guid: cba51b43a069c4b47983ccb023aee06d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 86.26
+      value: 86.74
       objectReference: {fileID: 0}
     - target: {fileID: 3170707409783823108, guid: cba51b43a069c4b47983ccb023aee06d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38300,6 +38300,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3641820745856282818, guid: cba51b43a069c4b47983ccb023aee06d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 02536433bcd143c46a08d6f3bbd19483, type: 2}
     - target: {fileID: 6193591761603950233, guid: cba51b43a069c4b47983ccb023aee06d, type: 3}
       propertyPath: m_Name
       value: Chew wall
