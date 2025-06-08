@@ -21,7 +21,7 @@ public class Scanning : MonoBehaviour
 
     private void Awake()
     {
-        rockScript = GameObject.Find("MoveRock").GetComponent<MakeRockMove>(); // Find the script  
+        rockScript = GameObject.Find("PushRock").GetComponent<MakeRockMove>(); // Find the script  
     }
 
 
