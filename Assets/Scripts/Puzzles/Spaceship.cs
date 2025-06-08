@@ -7,6 +7,7 @@ public class Spaceship : MonoBehaviour
     public GameObject Rat;
     public Transform ratSpawnPoint;
     [SerializeField] private ParticleSystem confetti;
+    [SerializeField] private GameObject spaceshipUi;
     
     //spaceship parts related
     private int _maxParts = 3;
@@ -65,6 +66,7 @@ public class Spaceship : MonoBehaviour
                 SpawnRat();
                 _ratSpawned = true;
                 Debug.Log("Find Larry the rat");
+                Destroy(spaceshipUi);
             }
 
             //for going to the credits
