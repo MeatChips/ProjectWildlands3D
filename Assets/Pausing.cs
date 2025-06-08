@@ -15,7 +15,7 @@ public class Pausing : MonoBehaviour
         if (context.performed) // Check if the action was performed
         {
             Debug.Log("Pause button pressed"); // Log to console for debugging
-            pauseSystem.PauseToggle(); // Call the PauseToggle method from the PauseSystem script
+            //pauseSystem.PauseToggle(); // Call the PauseToggle method from the PauseSystem script
         }
     }
 }

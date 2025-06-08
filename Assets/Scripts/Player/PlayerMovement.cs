@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 using Unity.Cinemachine;
-using static UnityEditor.PlayerSettings;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -38,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         cmBrain.ChannelMask = channel; // Set cinemachine brain channel mask to the right channel
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Changes the length of the vector to 1, so the same movement speed is same in every direction
         input.Normalize();
@@ -81,12 +79,15 @@ public class PlayerMovement : MonoBehaviour
         if (context.canceled) // Check if there is no input
             input = Vector2.zero; // No movement
         else // There is input
-            input += context.ReadValue<Vector2>(); // Add movement
+            input = context.ReadValue<Vector2>(); // Add movement
     }
 
     // Function for sneak
     public void Sneak()
     {
+        if (PauseSystem.Instance.isPaused)
+            return;
+
         // Set true or false
         isSneaking = !isSneaking;
     }
@@ -94,6 +95,9 @@ public class PlayerMovement : MonoBehaviour
     // Function for player jumping
     public void Jump(InputAction.CallbackContext context)
     {
+        if (PauseSystem.Instance.isPaused)
+            return;
+
         // Check if the jump button is pressed and the player is grounded
         if (context.performed && IsGrounded())
             rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse); // Add force upward so the player jumps

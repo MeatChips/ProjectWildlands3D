@@ -31,4 +31,13 @@ public class Player : MonoBehaviour
             Destroy(gameObject); // Destroy player
         }
     }
+
+    public void PauseGame(InputAction.CallbackContext context)
+    {
+        if (context.performed) // Check if the action was performed
+        {
+            Debug.Log("Pause button pressed"); // Log to console for debugging
+            PauseSystem.Instance.PauseGame(context); // Call the PauseToggle method from the PauseSystem script
+        }
+    }
 }

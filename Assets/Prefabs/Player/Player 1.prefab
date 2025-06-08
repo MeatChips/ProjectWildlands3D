@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7208864904327374510}
   - component: {fileID: 1301576006903413845}
-  - component: {fileID: 5715642141885384364}
   - component: {fileID: 6436827378421530510}
   - component: {fileID: 4903880274255006379}
   m_Layer: 0
@@ -59,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686224531823194421}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268346, y: -0, z: -0, w: 0.9238795}
+  m_LocalRotation: {x: 0.38268346, y: 0, z: 0, w: 0.9238795}
   m_LocalPosition: {x: 0, y: 10.606603, z: -10.606601}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -117,14 +116,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &5715642141885384364
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686224531823194421}
-  m_Enabled: 1
 --- !u!114 &6436827378421530510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +651,7 @@ GameObject:
   - component: {fileID: 7515069882691550712}
   - component: {fileID: 3532864936322757391}
   - component: {fileID: 7799764247067941018}
-  - component: {fileID: -4056917227742931036}
+  - component: {fileID: -4488654940695307038}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -724,7 +715,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!114 &8834542382753074396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,8 +925,8 @@ MonoBehaviour:
     m_ActionName: 'Player/enable power[/XInputControllerWindows1/leftShoulder,/XInputControllerWindows/leftShoulder]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -4056917227742931036}
-        m_TargetAssemblyTypeName: Pausing, Assembly-CSharp
+      - m_Target: {fileID: 3532864936322757391}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: PauseGame
         m_Mode: 0
         m_Arguments:
@@ -948,6 +939,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7961a0fa-b229-4e73-9048-497e4a7ada39
     m_ActionName: 'Player/PauseGame[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4488654940695307038}
+        m_TargetAssemblyTypeName: Chewing, Assembly-CSharp
+        m_MethodName: Chew
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 376abcb0-f69d-4853-90c8-9266e0a8e639
+    m_ActionName: 'Player/Chewing power[/XInputControllerWindows/rightShoulder]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1038,7 +1045,7 @@ MonoBehaviour:
   Object1: {fileID: 6050337041439037796}
   Object2: {fileID: 9037903272788331388, guid: ddc808c2a31969c48828379ec75e6f2b, type: 3}
   rockScript: {fileID: 0}
---- !u!114 &-4056917227742931036
+--- !u!114 &-4488654940695307038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1047,11 +1054,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6050337041439037796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0969c26f15830744b4a890da93ce945, type: 3}
+  m_Script: {fileID: 11500000, guid: ad17bbe541b482e4a940ded903d30f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseCanvas: {fileID: 0}
-  pauseSystem: {fileID: 0}
+  Object1: {fileID: 6050337041439037796}
+  leWall: {fileID: 0}
+  WallParticle: {fileID: 0}
+  ChewRange: 5
 --- !u!1 &6195105218124915656
 GameObject:
   m_ObjectHideFlags: 0

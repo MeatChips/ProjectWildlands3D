@@ -329,7 +329,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1468484189}
   - component: {fileID: 1468484188}
-  - component: {fileID: 1468484187}
   - component: {fileID: 1468484190}
   m_Layer: 0
   m_Name: Main Camera
@@ -338,14 +337,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1468484187
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468484186}
-  m_Enabled: 1
 --- !u!20 &1468484188
 Camera:
   m_ObjectHideFlags: 0
@@ -512,6 +503,7 @@ GameObject:
   - component: {fileID: 1922959034}
   - component: {fileID: 1922959033}
   - component: {fileID: 1922959035}
+  - component: {fileID: 1922959036}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -532,6 +524,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterMixerGroup: {fileID: 24300002, guid: 39dac4f4736d20e43b4677345f7447cf, type: 2}
+  introAudio: {fileID: 8300000, guid: d6fe29b81af801e4fa4bedf075ee0354, type: 3}
+  gameAudio: {fileID: 8300000, guid: 46035a8fd4a463f46bd76471c4bca482, type: 3}
 --- !u!4 &1922959034
 Transform:
   m_ObjectHideFlags: 0
@@ -557,12 +551,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 39dac4f4736d20e43b4677345f7447cf, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2561f67207435d34d9709618761f9104, type: 3}
-  m_Resource: {fileID: 8300000, guid: 2561f67207435d34d9709618761f9104, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d6fe29b81af801e4fa4bedf075ee0354, type: 3}
+  m_Resource: {fileID: 8300000, guid: d6fe29b81af801e4fa4bedf075ee0354, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -644,6 +638,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &1922959036
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922959032}
+  m_Enabled: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
