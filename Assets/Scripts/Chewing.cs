@@ -6,12 +6,14 @@ public class Chewing : MonoBehaviour
 {
     [SerializeField] GameObject Object1;
     public GameObject leWall;
+    [SerializeField] ParticleSystem WallParticle;
 
     public float ChewRange;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
         leWall = GameObject.Find("Chew wall"); // Find the wall object in the scene
+        WallParticle = GameObject.Find("PSWallBreak").GetComponent<ParticleSystem>(); // Get the particle system component from the wall object
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class Chewing : MonoBehaviour
         {
             Destroy(leWall);
             Debug.Log("destroyed");
+            WallParticle.Play(); // Activate the chewing particle effect
         }
     }
 }
