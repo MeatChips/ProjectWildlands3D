@@ -21141,6 +21141,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 541772069515650363, guid: 16dc611b12a065f488997d94bca83397, type: 3}
+      propertyPath: m_JoinBehavior
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 541772069515650363, guid: 16dc611b12a065f488997d94bca83397, type: 3}
       propertyPath: m_PlayerPrefab
       value: 
       objectReference: {fileID: 1355932546}
@@ -21220,7 +21224,8 @@ PrefabInstance:
       propertyPath: 'playerModels.Array.data[1]'
       value: 
       objectReference: {fileID: 919132149155446097, guid: 571e8423b43a7734585a198ae7c9a7e4, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7390155008305168034, guid: 16dc611b12a065f488997d94bca83397, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
