@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686224531823194421}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
+  m_LocalRotation: {x: 0.38265228, y: -0, z: -0, w: 0.92389244}
   m_LocalPosition: {x: 0, y: 10.606603, z: -10.606601}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -731,7 +731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 6
   sneakSpeed: 3
-  rotationSpeed: 450
+  rotationSpeed: 900
   jumpHeight: 5
   groundLayer:
     serializedVersion: 2
@@ -980,6 +980,7 @@ MonoBehaviour:
   bigPlayerPickUpPos: {fileID: 865872646245444258}
   throwPower: 6
   isBigPlayer: 0
+  isAnimationGoingOn: 0
 --- !u!135 &7515069882691550712
 SphereCollider:
   m_ObjectHideFlags: 0
