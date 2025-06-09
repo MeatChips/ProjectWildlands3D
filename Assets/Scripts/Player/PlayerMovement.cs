@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Unity.Cinemachine;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput; // Play input component
     private bool isSneaking = false; // Bool if you are sneaking
     private Animator animator; // Animator component
+    private ParticleSystem dustCloud; // Particle system dust cloud
 
     public bool isMoving; // Check if the player is moving
 
@@ -28,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>(); // Get rigidbody component
         playerInput = GetComponent<PlayerInput>(); // Grab playerinput component
         animator = GetComponentInChildren<Animator>(); // Grab the animator component of one of the children
+        dustCloud = GetComponentInChildren<ParticleSystem>(); //grab the particlesystem component of one of the children
     }
 
     private void Start()
@@ -72,11 +76,16 @@ public class PlayerMovement : MonoBehaviour
             isMoving = true; // The player is moving
 
             animator.SetBool("IsWalking", true);
+
+            if (!dustCloud.isPlaying)
+                dustCloud.Play();
         }
         else
         {
             isMoving = false; // The player is not moving
             animator.SetBool("IsWalking", false);
+            if (dustCloud.isPlaying)
+                dustCloud.Stop(); //stops the particle effect
         }
     }
 
