@@ -16,19 +16,15 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private CinemachineBrain cmBrain; // Cinemachine camera brain
     [SerializeField] private CinemachineCamera cmCam; // Cinemachine camera
-    [SerializeField] private ParticleSystem dustCloud; //particle system dust cloud
 
     private Rigidbody rb; // Rigidbody
     private Vector2 input; // Store player's input for movement (left, right / forward, backward)
     private PlayerInput playerInput; // Play input component
     private bool isSneaking = false; // Bool if you are sneaking
     private Animator animator; // Animator component
-    
-    public bool isMoving; // Check if the player is moving
+    private ParticleSystem dustCloud; // Particle system dust cloud
 
-   
-       
-    
+    public bool isMoving; // Check if the player is moving
 
     private void Awake()
     {
@@ -48,8 +44,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
-
         // Changes the length of the vector to 1, so the same movement speed is same in every direction
         input.Normalize();
 
@@ -82,21 +76,17 @@ public class PlayerMovement : MonoBehaviour
             isMoving = true; // The player is moving
 
             animator.SetBool("IsWalking", true);
-            
-            dustCloud.Play();
 
-
+            if (!dustCloud.isPlaying)
+                dustCloud.Play();
         }
         else
         {
             isMoving = false; // The player is not moving
             animator.SetBool("IsWalking", false);
-            dustCloud.Stop(); //stops the particle effect
+            if (dustCloud.isPlaying)
+                dustCloud.Stop(); //stops the particle effect
         }
-
-         
-
-
     }
 
     // Function for player movement
@@ -134,7 +124,4 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics.CheckSphere(groundCheck.position, .1f, groundLayer); // Adjust layer mask as needed
     }
-
-    
-    
 }

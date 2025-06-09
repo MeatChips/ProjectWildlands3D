@@ -739,7 +739,7 @@ MonoBehaviour:
   groundCheck: {fileID: 6594734807626089371}
   cmBrain: {fileID: 4903880274255006379}
   cmCam: {fileID: 8018372034138126548}
-  dustCloud: {fileID: 7668907667415899350}
+  dustCloud: {fileID: 0}
   isMoving: 0
 --- !u!114 &1604525663127558155
 MonoBehaviour:
@@ -1353,11 +1353,6 @@ PrefabInstance:
 --- !u!4 &856101137863341669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 598083691540179255, guid: e02a2bc2414599b4c9b98cc51618c791, type: 3}
-  m_PrefabInstance: {fileID: 265055420523093842}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &7668907667415899350 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7620306505325740932, guid: e02a2bc2414599b4c9b98cc51618c791, type: 3}
   m_PrefabInstance: {fileID: 265055420523093842}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4453746451318357275
