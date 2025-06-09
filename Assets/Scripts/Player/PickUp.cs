@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,6 +14,7 @@ public class PickUp : MonoBehaviour
     private PlayerMovement playerMovement; // Player movement component
     private SphereCollider sphereCol; // Sphere collider / interact range
     [HideInInspector] public bool isBigPlayer = false;
+    private Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +22,7 @@ public class PickUp : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>(); // Grab player movement componenet
         sphereCol = GetComponent<SphereCollider>(); // Grab sphere collider
         sphereCol.radius = interactRange; // Set sphere collider radius
+        animator = GetComponentInChildren<Animator>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -60,12 +63,32 @@ public class PickUp : MonoBehaviour
         }
     }
 
-    // Grab object
     private void GrabObject()
     {
+        // Start the coroutine
+        StartCoroutine(WaitForAnimationAndGrab());
+    }
+
+    private IEnumerator WaitForAnimationAndGrab()
+    {
+        // Trigger the animation
+        animator.SetTrigger("Interact");
+
+        // Wait one frame so the animator can update
+        yield return null;
+
+        // Wait until the "Interact" animation starts
+        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Interact"));
+
+        // Wait until most of the animation is ended, in this case 80%
+        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= .8f);
+
+        // Grab The object
         heldObject = nearbyObject;
         heldObject.GetComponent<Rigidbody>().isKinematic = true;
         heldObject.GetComponent<SphereCollider>().enabled = false;
+
+        // Attach the object to the correct position
         Transform chosenPickUpPos = isBigPlayer ? bigPlayerPickUpPos : smallPlayerPickUpPos;
         heldObject.transform.SetParent(chosenPickUpPos);
         heldObject.transform.position = chosenPickUpPos.position;

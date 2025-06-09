@@ -533,6 +533,17 @@
                 },
                 {
                     "name": "",
+                    "id": "bf786190-270f-4b7b-b4d7-65f9ddde0699",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "scanning",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "bcfc8f51-9354-4a13-9ae7-a2f040ea5256",
                     "path": "<XInputController>/leftShoulder",
                     "interactions": "",
@@ -546,6 +557,17 @@
                     "name": "",
                     "id": "68b9f43c-3c4f-4349-9537-6cdd52921f28",
                     "path": "<DualShockGamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "enable power",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b72b416e-587b-458f-898c-43cbf8a01592",
+                    "path": "<Keyboard>/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

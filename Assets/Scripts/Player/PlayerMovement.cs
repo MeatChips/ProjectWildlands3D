@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 input; // Store player's input for movement (left, right / forward, backward)
     private PlayerInput playerInput; // Play input component
     private bool isSneaking = false; // Bool if you are sneaking
+    private Animator animator; // Animator component
 
     public bool isMoving; // Check if the player is moving
 
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>(); // Get rigidbody component
         playerInput = GetComponent<PlayerInput>(); // Grab playerinput component
+        animator = GetComponentInChildren<Animator>(); // Grab the animator component of one of the children
     }
 
     private void Start()
@@ -68,9 +70,14 @@ public class PlayerMovement : MonoBehaviour
             rb.MovePosition(rb.position + moveDirection); // Move the player
 
             isMoving = true; // The player is moving
+
+            animator.SetBool("IsWalking", true);
         }
         else
+        {
             isMoving = false; // The player is not moving
+            animator.SetBool("IsWalking", false);
+        }
     }
 
     // Function for player movement
