@@ -8,6 +8,7 @@ public class Prairiedogpuzzle : MonoBehaviour
     [SerializeField] private GameObject Object3;
     [SerializeField] private GameObject Object4;
     [SerializeField] private GameObject Object5;
+    [SerializeField] private GameObject uiCanvas;
     public bool iscreated;
     public bool iscreated2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,7 +28,8 @@ public class Prairiedogpuzzle : MonoBehaviour
             Object4.SetActive(true);
             Object5.SetActive(true);
             iscreated2 = true;
-    Debug.Log("doine");
+            uiCanvas.gameObject.SetActive(false);
+            Debug.Log("doine");
         }
     }
 }
