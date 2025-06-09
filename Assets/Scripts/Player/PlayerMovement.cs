@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Unity.Cinemachine;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,20 +16,26 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private CinemachineBrain cmBrain; // Cinemachine camera brain
     [SerializeField] private CinemachineCamera cmCam; // Cinemachine camera
+    private ParticleSystem dustCloud; //particle system dust cloud
 
     private Rigidbody rb; // Rigidbody
     private Vector2 input; // Store player's input for movement (left, right / forward, backward)
     private PlayerInput playerInput; // Play input component
     private bool isSneaking = false; // Bool if you are sneaking
     private Animator animator; // Animator component
-
+    
     public bool isMoving; // Check if the player is moving
+
+   
+       
+    
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>(); // Get rigidbody component
         playerInput = GetComponent<PlayerInput>(); // Grab playerinput component
         animator = GetComponentInChildren<Animator>(); // Grab the animator component of one of the children
+        dustCloud = GetComponentInChildren<ParticleSystem>(); //grab the particlesystem component of one of the children
     }
 
     private void Start()
@@ -40,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+
+
         // Changes the length of the vector to 1, so the same movement speed is same in every direction
         input.Normalize();
 
@@ -72,12 +82,21 @@ public class PlayerMovement : MonoBehaviour
             isMoving = true; // The player is moving
 
             animator.SetBool("IsWalking", true);
+            
+            dustCloud.Play();
+
+
         }
         else
         {
             isMoving = false; // The player is not moving
             animator.SetBool("IsWalking", false);
+            dustCloud.Stop(); //stops the particle effect
         }
+
+         
+
+
     }
 
     // Function for player movement
@@ -115,4 +134,7 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics.CheckSphere(groundCheck.position, .1f, groundLayer); // Adjust layer mask as needed
     }
+
+    
+    
 }
