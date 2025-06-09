@@ -72,7 +72,10 @@ public class PickUp : MonoBehaviour
 
     private IEnumerator WaitForAnimationAndGrab()
     {
-        // Trigger the animation
+        if (nearbyObject == null)
+            yield break;
+
+        // Trigger animation
         animator.SetTrigger("Interact");
 
         isAnimationGoingOn = true;
@@ -84,19 +87,23 @@ public class PickUp : MonoBehaviour
         yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Interact"));
 
         // Wait until most of the animation is ended, in this case 80%
-        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= .8f);
-
-        // Grab The object
-        heldObject = nearbyObject;
-        heldObject.GetComponent<Rigidbody>().isKinematic = true;
-        heldObject.GetComponent<SphereCollider>().enabled = false;
-
-        // Attach the object to the correct position
-        Transform chosenPickUpPos = isBigPlayer ? bigPlayerPickUpPos : smallPlayerPickUpPos;
-        heldObject.transform.SetParent(chosenPickUpPos);
-        heldObject.transform.position = chosenPickUpPos.position;
+        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.8f);
 
         isAnimationGoingOn = false;
+
+        // Recheck if object still exists (defensive coding)
+        if (nearbyObject != null)
+        {
+            // Grab The object
+            heldObject = nearbyObject;
+            heldObject.GetComponent<Rigidbody>().isKinematic = true;
+            heldObject.GetComponent<SphereCollider>().enabled = false;
+
+            // Attach the object to the correct position
+            Transform chosenPickUpPos = isBigPlayer ? bigPlayerPickUpPos : smallPlayerPickUpPos;
+            heldObject.transform.SetParent(chosenPickUpPos);
+            heldObject.transform.position = chosenPickUpPos.position;
+        }
     }
 
     // Drop object

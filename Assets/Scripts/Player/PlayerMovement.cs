@@ -103,7 +103,6 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-
         if (context.canceled) // Check if there is no input
             input = Vector2.zero; // No movement
         else // There is input
