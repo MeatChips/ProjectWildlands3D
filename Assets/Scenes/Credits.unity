@@ -1874,7 +1874,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Lead Programmer \r\nCo-Lead Game designer \r\nBacklog Master\r \r\n3D
-    Modeler \r\nConcept Artist\nResearcher"
+    Artist \r\nConcept Artist\nResearcher"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
