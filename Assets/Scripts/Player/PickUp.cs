@@ -15,6 +15,7 @@ public class PickUp : MonoBehaviour
     private SphereCollider sphereCol; // Sphere collider / interact range
     [HideInInspector] public bool isBigPlayer = false;
     private Animator animator;
+    [HideInInspector] public bool isAnimationGoingOn = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -74,6 +75,8 @@ public class PickUp : MonoBehaviour
         // Trigger the animation
         animator.SetTrigger("Interact");
 
+        isAnimationGoingOn = true;
+
         // Wait one frame so the animator can update
         yield return null;
 
@@ -92,6 +95,8 @@ public class PickUp : MonoBehaviour
         Transform chosenPickUpPos = isBigPlayer ? bigPlayerPickUpPos : smallPlayerPickUpPos;
         heldObject.transform.SetParent(chosenPickUpPos);
         heldObject.transform.position = chosenPickUpPos.position;
+
+        isAnimationGoingOn = false;
     }
 
     // Drop object

@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isSneaking = false; // Bool if you are sneaking
     private Animator animator; // Animator component
     private ParticleSystem dustCloud; // Particle system dust cloud
+    private PickUp pickUp;
 
     public bool isMoving; // Check if the player is moving
 
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>(); // Grab playerinput component
         animator = GetComponentInChildren<Animator>(); // Grab the animator component of one of the children
         dustCloud = GetComponentInChildren<ParticleSystem>(); //grab the particlesystem component of one of the children
+        pickUp = GetComponent<PickUp>();
     }
 
     private void Start()
@@ -92,6 +94,16 @@ public class PlayerMovement : MonoBehaviour
     // Function for player movement
     public void Move(InputAction.CallbackContext context)
     {
+        if (PauseSystem.Instance.isPaused)
+            return;
+
+        if (pickUp.isAnimationGoingOn)
+        {
+            input = Vector2.zero;
+            return;
+        }
+
+
         if (context.canceled) // Check if there is no input
             input = Vector2.zero; // No movement
         else // There is input
@@ -112,6 +124,9 @@ public class PlayerMovement : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
     {
         if (PauseSystem.Instance.isPaused)
+            return;
+
+        if (pickUp.isAnimationGoingOn)
             return;
 
         // Check if the jump button is pressed and the player is grounded
