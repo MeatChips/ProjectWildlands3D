@@ -2,6 +2,16 @@ using UnityEngine;
 
 public class ItemRespawn : MonoBehaviour
 {
+    public enum KindOfPickUp
+    {
+        GrassBundle,
+        SpaceshipPart,
+        Boulder,
+        Dog
+    }
+
+    public KindOfPickUp pickUpKind;
+
     private Vector3 originalPos;
     private Rigidbody rb;
 

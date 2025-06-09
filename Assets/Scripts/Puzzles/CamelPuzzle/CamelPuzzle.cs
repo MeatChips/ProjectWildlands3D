@@ -12,9 +12,12 @@ public class CamelPuzzle : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PickUp") && !other.gameObject.name.Contains("SpaceShip"))
+        ItemRespawn itemRespawn = other.GetComponent<ItemRespawn>();
+
+        if (itemRespawn != null && itemRespawn.pickUpKind == ItemRespawn.KindOfPickUp.GrassBundle) // Remove or adjust based on enum use
         {
             animator.SetTrigger("Bump");
             walkColliderOne.SetActive(true);
@@ -22,8 +25,7 @@ public class CamelPuzzle : MonoBehaviour
             Destroy(other.gameObject);
 
             ChewParticle.SetActive(true); // Activate the chewing particle effect
-
-            uiCanvas.gameObject.SetActive(false); // Hide the UI canvas when the camel eats the object
+            uiCanvas.gameObject.SetActive(false); // Hide the UI canvas
         }
     }
 }
