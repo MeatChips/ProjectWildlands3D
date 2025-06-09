@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private CinemachineBrain cmBrain; // Cinemachine camera brain
     [SerializeField] private CinemachineCamera cmCam; // Cinemachine camera
-    private ParticleSystem dustCloud; //particle system dust cloud
+    [SerializeField] private ParticleSystem dustCloud; //particle system dust cloud
 
     private Rigidbody rb; // Rigidbody
     private Vector2 input; // Store player's input for movement (left, right / forward, backward)
