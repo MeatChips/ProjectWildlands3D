@@ -41956,6 +41956,7 @@ MonoBehaviour:
   Object3: {fileID: 1233088443}
   Object4: {fileID: 814630794}
   Object5: {fileID: 1461071267}
+  uiCanvas: {fileID: 2113947611}
   iscreated: 0
   iscreated2: 0
 --- !u!1 &1989121681
