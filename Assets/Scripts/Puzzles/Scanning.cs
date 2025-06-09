@@ -12,6 +12,7 @@ public class Scanning : MonoBehaviour
     public float ScanRange;
     public GameObject Object1;
     public GameObject Object2;
+    public ParticleSystem scanParticles; // reference to particle system
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class Scanning : MonoBehaviour
         // if the distance between the player and the scancube is less than scanrange and L is pressed unlock camel power
         if (Vector3.Distance(Object1.transform.position, Object2.transform.position) < ScanRange && context.performed)
         {
+            scanParticles.Play();
             CamelPowerUnlocked = true;
             Debug.Log("camel unlocked");
         }
