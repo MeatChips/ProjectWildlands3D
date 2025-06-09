@@ -652,7 +652,6 @@ GameObject:
   - component: {fileID: 3532864936322757391}
   - component: {fileID: 7799764247067941018}
   - component: {fileID: -4488654940695307038}
-  - component: {fileID: 6812082752383617065}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -1062,18 +1061,6 @@ MonoBehaviour:
   leWall: {fileID: 0}
   WallParticle: {fileID: 0}
   ChewRange: 5
---- !u!114 &6812082752383617065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6050337041439037796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b33a9f75fbcc92468d090cc9ffa15ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6195105218124915656
 GameObject:
   m_ObjectHideFlags: 0
